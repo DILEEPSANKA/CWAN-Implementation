@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #dfe0e4;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden; 
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/sample_project/static/images/homepage.jpg') no-repeat center center/cover;
+    filter: blur(10px); 
+    z-index: -1;
+}
+
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 85px;
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+    background: #40566d;
+    padding: 25px 20px;
+    transition: all 0.4s ease;
+}
+
+.sidebar:hover {
+    width: 260px;
+}
+
+.sidebar .sidebar-header {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .sidebar-header img {
+    width: 42px;
+    border-radius: 50%;
+}
+
+.sidebar .sidebar-header h2 {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-left: 23px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.sidebar:hover .sidebar-header h2 {
+    opacity: 1;
+}
+
+.sidebar-links {
+    list-style: none;
+    margin-top: 20px;
+    height: 80%;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.sidebar-links::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+    color: white;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 15px 10px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.sidebar-links li a .text {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.sidebar:hover .sidebar-links li a .text {
+    opacity: 1;
+}
+
+.sidebar-links li a:hover {
+    color: #161a2d;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.sidebar-links li a.active {
+    background-color: #fff;
+    color: #161a2d;
+    border-radius: 4px;
+}
+
+.content {
+    margin-left: 100px;
+    padding: 20px;
+    flex-grow: 1;
+    transition: margin-left 0.4s;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar:hover + .content {
+    margin-left: 260px;
+}
+
+.account-card {
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 600px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: auto; 
+    max-width: 90%;
+}
+
+.account-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.account-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.account-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.account-info .account-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #4f52ba;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.account-info .account-icon i {
+    font-size: 28px;
+    color: white;
+}
+
+.account-info .text {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container label {
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 5px;
+    width: 120%;
+    text-align: left;
+}
+
+.input-container input {
+    font-size: 1rem;
+    padding: 12px 15px;
+    width: 120%;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.input-container input:focus {
+    outline: none;
+    background-color: white;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+}
+
+.action-button {
+    background: linear-gradient(135deg, #1d30b1, #3c50d0);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 45%;
+    transition: 0.3s ease;
+}
+
+.action-button:hover {
+    background: linear-gradient(135deg, #b45218, #e3723a);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .account-container {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+
+    .action-button {
+        width: 100%;
+    }
+}

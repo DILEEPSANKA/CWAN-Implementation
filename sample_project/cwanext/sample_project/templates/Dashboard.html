@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+    <link rel="stylesheet" href="{{ url_for('sample_project.static', filename='css/Dashboard.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <canvas id="canvas"></canvas>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="{{ url_for('sample_project.static', filename='Images/Exafluence.jpg') }}" alt="logo" />
+            <span style="color: white; padding-left: 25px; font-weight: bold;">Exafluence</span>
+        </div>
+        <ul class="sidebar-links">
+            <h4>
+                <span style="color: white;">Main Menu</span>
+                <div class="menu-separator"></div>
+            </h4>
+            
+            <li><a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="/account"><i class="fas fa-user"></i> My Account</a></li>
+            <li><a href="/myshipment"><i class="fas fa-box"></i> My Shipment</a></li>
+            <li><a href="/newshipment"><i class="fas fa-plus"></i> New Shipment</a></li> 
+            <li><a href="/login" class="logout" onclick="logout(event)"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <div class="content1">
+        <h2 id="welcome-message" style="background-color: #40566d; width: 100%; padding: 20px; text-align: center;">
+            Hi {{ username }}, Welcome to SCMXPertLite
+        </h2>
+    </div>
+
+    <div class="content">
+        <div class="button-container">
+            <button class="action-button" onclick="navigateTo('/newshipment')">Create New Shipment</button>
+            <button class="action-button" onclick="navigateTo('/myshipment')">View Your Shipments</button>
+        </div>
+    </div>
+
+    <script>
+        const token = localStorage.getItem("access_token");
+        function decodeToken(token) {
+            const base64Url = token.split('.')[1];
+            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+            return JSON.parse(jsonPayload);
+        }
+    
+        const user = decodeToken(token);
+        const userName = user.username || "User";
+    
+        document.getElementById('welcome-message').innerText = `Hi ${userName}, Welcome to SCMXPertLite`;
+    
+        function getAuthHeaders() {
+            return {
+                'Authorization': `Bearer ${token}`,  
+                'Content-Type': 'application/json'   
+            };
+        }
+    
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+    
+        function logout(event) {
+        event.preventDefault();  
+        localStorage.removeItem("access_token");
+
+        fetch("/logout", {
+            method: "POST",
+            credentials: "same-origin",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                window.location.href = "/login";
+            } else {
+                throw new Error("Logout failed");
+            }
+        })
+        .catch(error => {
+            console.error("Logout error:", error);
+        });
+    }
+    </script>
+</body>
+</html>

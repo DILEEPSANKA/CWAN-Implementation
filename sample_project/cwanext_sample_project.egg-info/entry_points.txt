@@ -1,0 +1,2 @@
+[cwan.extensions]
+cwan-extension = cwanext.sample_project.sample_project:Extension

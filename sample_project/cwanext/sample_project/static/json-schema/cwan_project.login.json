@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "679a0e6923f014884ecce718"
+  },
+  "template_name": "login",
+  "title": "Login",
+  "head": {
+    "stylesheets": [
+      {
+        "href": "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      }
+    ],
+    "scripts": [
+      {
+        "src": "https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      },
+      {
+        "src": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"
+      },
+      {
+        "src": "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      }
+    ]
+  },
+  "content": {
+    "form": {
+      "fields": {
+        "email": {
+          "type": "email",
+          "id": "email",
+          "placeholder": "Enter email address",
+          "required": true
+        },
+        "password": {
+          "type": "password",
+          "id": "password",
+          "placeholder": "Enter password",
+          "required": true
+        }
+      },
+      "buttons": {
+        "login": {
+          "type": "submit",
+          "class": "btn btn-primary btn-block py-2",
+          "label": "Submit"
+        },
+        "forgot_password": {
+          "type": "button",
+          "label": "Forgot Password",
+          "onClick": "#"
+        },
+        "google": {
+          "type": "button",
+          "label": "Sign in with Google",
+          "icon": "https://www.google.com/favicon.ico",
+          "onClick": "#"
+        }
+      }
+    }
+  }
+}]

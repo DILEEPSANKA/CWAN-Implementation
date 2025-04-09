@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(135deg, #fef9d7 10%, #78c3e0 100%);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.form-container {
+    padding: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    background-image: linear-gradient(135deg, #d1884d 10%, #fbed96 100%);
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center; 
+}
+
+.form-container label {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-container input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.form-container input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.form-container button {
+    padding: 12px 20px;
+    background-color: #2864d3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 20px auto 10px auto;
+    display: block; 
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #4c81ff;
+}
+
+.form-container .login-link {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.form-container .login-link a {
+    color: #4c81ff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.form-container .login-link a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+.form-container a {
+    color: #4c81ff; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+} 

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Shipment</title>
+    <link rel="stylesheet" href="{{ url_for('sample_project.static', filename='css/Newshipment.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="{{ url_for('sample_project.static', filename='Images/Exafluence.jpg') }}" alt="logo" />
+            <h2>Exafluence</h2>
+        </div>
+        <ul class="sidebar-links">
+            <li><a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+            <li><a href="/account"><i class="fas fa-user"></i> My Account</a></li>
+            <li><a href="/myshipment"><i class="fas fa-box"></i> My Shipment</a></li>
+            <li><a href="/newshipment" class="active"><i class="fas fa-plus"></i> New Shipment</a></li>
+            <li><a href="/login" class="logout" onclick="logout(event)"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    
+    <div class="content">
+        <div id="response-message" class="hidden"></div>
+
+        <h2>Create New Shipment</h2>
+
+        <form class="form-grid" id="shipment-form" action="/newshipment_user" method="post">
+            <div class="form-outline">
+                <label class="form-label" for="sinum">Shipment/Invoice Number</label>
+                <input type="number" id="sinum" name="shipment_number" class="input-field" required />
+            </div>
+
+            <div class="form-outline">
+                <label class="form-label" for="cnum">Container Number</label>
+                <input type="number" id="cnum" name="container_number" class="input-field" required />
+            </div>
+
+            <div class="form-outline">
+                <label class="form-label" for="goodsno">Serial Number of Goods</label>
+                <input type="number" id="goodsno" name="goods_number" class="input-field" required />
+            </div>
+
+            <div class="form-outline">
+                <label class="form-label" for="rdetails">Route Details</label>
+                <select id="rdetails" name="route_details" class="input-field" required>
+                    <option value="" disabled selected hidden>Select Route</option>
+                    <option>Hyderabad-Delhi</option>
+                    <option>Mumbai-Punjab</option>
+                    <option>Tirupati-Chennai</option>
+                    <option>Delhi-Mumbai</option>
+                    <option>Bangalore-Chennai</option>
+                    <option>Chennai-Tirupati</option>
+                </select>
+            </div>
+
+            <div class="form-outline">
+                <label class="form-label" for="gdtypes">Goods Type</label>
+                <select id="gdtypes" name="goods_type" class="input-field" required>
+                    <option value="" disabled selected hidden>Select Good Type</option>
+                    <option>Health-Care</option>
+                    <option>Electronic-Gadgets</option>
+                    <option>E-Commerce</option>
+                    <option>Textiles</option>
+                    <option>Nourishments</option>
+                </select>
+            </div>
+
+            <div class="form-outline">
+                <label class="form-label" for="device">Device ID</label>
+                <select id="device" name="device_id" class="input-field" required>
+                    <option value="" disabled selected hidden>Select Device ID</option>
+                    <option>1819124651</option>
+                    <option>1819124652</option>
+                    <option>1819124653</option>
+                </select>
+            </div>
+
+            <div class="form-outline">
+                <label class="form-label" for="exdate">Expected Delivery Date</label>
+                <input type="date" id="exdate" name="expected_delivery_date" class="input-field" required />
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const exdateInput = document.getElementById("exdate");
+                    const today = new Date().toISOString().split("T")[0];
+                    exdateInput.setAttribute("min", today);
+                });
+            </script>
+
+            <div class="form-outline">
+                <label class="form-label" for="ponum">PO Number</label>
+                <input type="number" id="ponum" name="po_number" class="input-field" required />
+            </div>
+
+            <div class="form-outline">
+                <label class="form-label" for="delnum">Delivery Number</label>
+                <input type="number" id="delnum" name="delivery_number" class="input-field" required />
+            </div>
+
+            <div class="form-outline">
+                <label class="form-label" for="ndcnum">NDC Number</label>
+                <input type="number" id="ndcnum" name="ndc_number" class="input-field" required />
+            </div>
+
+            <div class="form-outline">
+                <label class="form-label" for="bid">Batch ID</label>
+                <input type="number" id="bid" name="batch_id" class="input-field" required />
+            </div>
+
+            <div class="form-outline">
+                <label class="form-label" for="sdesc">Shipment Description</label>
+                <textarea rows="1" id="sdesc" name="shipment_description" class="input-field form-textarea" required></textarea>
+            </div>
+            
+            <div class="button-container">
+                <button type="submit" class="button-80" id="subbtn">Submit Shipment</button>
+                <button type="reset" class="button-80" id="canbtn">Clear Details</button>
+            </div>
+        </form>
+        <h3>Already have a shipment? <a href="/myshipment">View your shipments</a></h3>
+    </div>
+
+    <script>
+        document.getElementById('new-shipment-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+
+            const response = await fetch('/newshipment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                alert(result.message);
+                window.location.href = '/myshipment';
+            } else {
+                alert(result.detail);
+            }
+        });
+
+        function logout(event) {
+            event.preventDefault();
+            fetch("/logout", {
+                method: "POST",
+                credentials: "same-origin",
+            }).then(() => {
+                window.location.href = "/login";
+            });
+        }
+    </script>
+    
+    <script src="{{ url_for('sample_project.static', filename='js/Newshipment.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: cwanext-sample_project
+Version: 0.1.0
+Summary: CWAN Extension for sample_project
+Author: DileepSanka
+Author-email: sanka.dileep@exafluence.com
+License: MIT
+Keywords: CWAN
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Programming Language :: Python :: 3.11.5
+Classifier: Programming Language :: Python :: 3.11.5
+Description-Content-Type: text/markdown
+Requires-Dist: typing_extensions
+Requires-Dist: flask[async]

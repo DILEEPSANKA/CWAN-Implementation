@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipment Page</title>
+    <link rel="stylesheet" href="{{ url_for('sample_project.static', filename='css/Myshipment.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="{{ url_for('sample_project.static', filename='Images/Exafluence.jpg') }}" alt="logo" />
+            <h2>Exafluence</h2>
+        </div>
+        <ul class="sidebar-links">
+            <h4>
+                <span style="color: white;">Main Menu</span>
+                <div class="menu-separator"></div>
+            </h4>
+            <li>
+                <a href="/dashboard">
+                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                    <span class="text"> Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/account" class="active">
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <span class="text"> My Account</span>
+                </a>
+            </li>
+            <li><a href="/myshipment"><i class="fas fa-box"></i> My Shipment</a></li>
+            <li><a href="/newshipment"><i class="fas fa-plus"></i> New Shipment</a></li>
+
+            <li><a href="/login" class="logout" onclick="logout(event)"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <div class="content">
+        <h2 style="text-align: center;">
+            My Shipments
+        </h2>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search shipments..." onkeyup="searchTable()">
+            <span class="search-icon">🔍</span>
+        </div>
+                  
+        {% if shipments %} 
+        <table>
+            <thead>
+                <tr>
+                    {% if role == 'admin' %}
+                    <th>Username</th>
+                    {% endif %}
+                    <th>Shipment Number</th>
+                    <th>Route Details</th>
+                    <th>Device</th>
+                    <th>PO Number</th>
+                    <th>NDC Number</th>
+                    <th>Serial Number</th>
+                    <th>Container Number</th>
+                    <th>Goods Type</th>
+                    <th>Expected Delivery</th>
+                    <th>Delivery Number</th>
+                    <th>Batch ID</th>
+                    <th>Shipment Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for shipment in shipments %}
+                <tr>
+                    {% if role == 'admin' %}
+                    <td>{{ shipment.user }}</td>
+                    {% endif %}
+                    <td>{{ shipment.shipment_number }}</td>
+                    <td>{{ shipment.route_details }}</td>
+                    <td>{{ shipment.device }}</td>
+                    <td>{{ shipment.po_number }}</td>
+                    <td>{{ shipment.ndc_number }}</td>
+                    <td>{{ shipment.serial_number }}</td>
+                    <td>{{ shipment.container_number }}</td>
+                    <td>{{ shipment.goods_type }}</td>
+                    <td>{{ shipment.expected_delivery }}</td>
+                    <td>{{ shipment.delivery_number }}</td>
+                    <td>{{ shipment.batch_id }}</td>
+                    <td>{{ shipment.shipment_description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No shipments found for your account.</p>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('sample_project.static', filename='js/Myshipment.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="{{ url_for('sample_project.static', filename='css/Account.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="{{ url_for('sample_project.static', filename='Images/Exafluence.jpg') }}" alt="logo" />
+            <h2>Exafluence</h2>
+        </div>
+        <ul class="sidebar-links">
+            <h4>
+                <span style="color: white;">Main Menu</span>
+                <div class="menu-separator"></div>
+            </h4>
+            <li>
+                <a href="/dashboard">
+                    <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                    <span class="text"> Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="/account" class="active">
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <span class="text"> My Account</span>
+                </a>
+            </li>
+            <li><a href="/myshipment"><i class="fas fa-box"></i> My Shipment</a></li>
+            <li><a href="/newshipment"><i class="fas fa-plus"></i> New Shipment</a></li>
+            <li><a href="/login" class="logout" onclick="logout(event)"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    
+    <div class="content">
+        <div class="account-card">
+         
+            <div class="account-info">
+                <div class="account-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <span class="text">Account Information</span>
+            </div>
+
+           
+            <form id="account-form">
+                <div class="input-container">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" value="{{ username }}" readonly> <!-- Corrected to display username -->
+                </div>
+
+                <div class="input-container">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" value="{{ email }}" readonly>
+                </div>
+                
+                <div class="input-container">
+                    <label for="role">Role:</label>
+                    <input type="text" id="role" value="{{ role }}" readonly>
+                </div>
+
+                <div class="button-container">
+                    <button class="action-button" type="button" onclick="logout(event)">Logout</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('sample_project.static', filename='js/Account.js') }}"></script>
+
+</body>
+</html>
