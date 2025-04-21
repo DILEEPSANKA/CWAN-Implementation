@@ -1,0 +1,46 @@
+{
+  "section": "dashboard_page",
+  "head": {
+    "meta_charset": "UTF-8",
+    "meta_viewport": "width=device-width, initial-scale=1.0",
+    "title": "Dashboard",
+    "css_links": [
+      "css/Dashboard.css",
+      "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    ]
+  },
+  "sidebar": {
+    "logo_image": "Images/Exafluence.jpg",
+    "logo_text": "Exafluence",
+    "menu_title": "Main Menu",
+    "menu_items": [
+      {
+        "name": "Dashboard",
+        "href": "/dashboard",
+        "icon": "fas fa-tachometer-alt"
+      },
+      {
+        "name": "My Account",
+        "href": "/account",
+        "icon": "fas fa-user"
+      },
+      {
+        "name": "My Shipment",
+        "href": "/myshipment",
+        "icon": "fas fa-box"
+      },
+      {
+        "name": "New Shipment",
+        "href": "/newshipment",
+        "icon": "fas fa-plus"
+      },
+      {
+        "name": "Logout",
+        "href": "/login",
+        "icon": "fas fa-sign-out-alt",
+        "class": "logout",
+        "onclick": "logout(event)"
+      }
+    ]
+  }
+}

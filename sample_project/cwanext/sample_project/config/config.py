@@ -20,6 +20,10 @@ database = mongo_client[os.getenv("DB_NAME")]
 Shipments = database['shipments']
 User_details = database['user_details']
 Device_Data_Stream= database['Device_Data_Stream']
+Home =database['Home']
+signup=database['signup']
+Dashboard=database['Dashboard']
+Account=database['Account']
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 SECRET_KEY = secrets.token_hex(32)

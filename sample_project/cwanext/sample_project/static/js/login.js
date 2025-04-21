@@ -35,7 +35,6 @@ document.getElementById("login-form").addEventListener("submit", async function 
     });
 
     if (response.ok) {
-      console.log("hello");
       const data = await response.json();
       const token = data.access_token;
       localStorage.setItem("access_token", token);

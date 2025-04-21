@@ -1,4 +1,82 @@
-2025-04-08 11:57:36,446 - cwan - ERROR - Exception on /login [GET]
+2025-04-08 13:50:19,292 - cwan - INFO - Logging setup complete
+2025-04-08 13:50:19,298 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 13:50:20,146 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 13:50:20,587 - cwan - INFO - Logging setup complete
+2025-04-08 13:50:20,589 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 13:50:21,298 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 13:58:34,652 - cwan - INFO - Logging setup complete
+2025-04-08 13:58:34,653 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 13:58:35,568 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 13:58:36,008 - cwan - INFO - Logging setup complete
+2025-04-08 13:58:36,011 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 13:58:36,666 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 14:06:11,274 - cwan - INFO - Logging setup complete
+2025-04-08 14:06:11,276 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 14:06:12,123 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 14:06:12,552 - cwan - INFO - Logging setup complete
+2025-04-08 14:06:12,553 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 14:06:13,192 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 14:11:51,217 - cwan - INFO - Logging setup complete
+2025-04-08 14:11:51,219 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 14:11:52,159 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 14:11:52,593 - cwan - INFO - Logging setup complete
+2025-04-08 14:11:52,594 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 14:11:53,302 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 14:18:29,480 - cwan - INFO - Logging setup complete
+2025-04-08 14:18:29,481 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 14:18:30,273 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 14:18:30,727 - cwan - INFO - Logging setup complete
+2025-04-08 14:18:30,728 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 14:18:31,619 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 14:24:33,386 - cwan - INFO - Logging setup complete
+2025-04-08 14:24:33,387 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 14:24:34,171 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 14:24:34,606 - cwan - INFO - Logging setup complete
+2025-04-08 14:24:34,608 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 14:24:35,319 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 14:40:20,363 - cwan - INFO - Logging setup complete
+2025-04-08 14:40:20,364 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 14:40:21,184 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 14:40:21,625 - cwan - INFO - Logging setup complete
+2025-04-08 14:40:21,626 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 14:40:22,263 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 14:48:06,308 - cwan - INFO - Logging setup complete
+2025-04-08 14:48:06,309 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 14:48:07,323 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 14:48:07,754 - cwan - INFO - Logging setup complete
+2025-04-08 14:48:07,755 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 14:48:08,462 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 14:55:53,263 - cwan - INFO - Logging setup complete
+2025-04-08 14:55:53,264 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 14:55:54,088 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 14:55:54,521 - cwan - INFO - Logging setup complete
+2025-04-08 14:55:54,522 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 14:55:55,249 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 15:00:03,152 - cwan - INFO - Logging setup complete
+2025-04-08 15:00:03,153 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 15:00:03,993 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 15:00:04,418 - cwan - INFO - Logging setup complete
+2025-04-08 15:00:04,420 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 15:00:05,089 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 15:03:43,240 - cwan - INFO - Logging setup complete
+2025-04-08 15:03:43,242 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 15:03:43,997 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 15:03:44,436 - cwan - INFO - Logging setup complete
+2025-04-08 15:03:44,437 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 15:03:45,187 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 15:07:41,768 - cwan - INFO - Logging setup complete
+2025-04-08 15:07:41,769 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 15:07:42,640 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 15:07:43,113 - cwan - INFO - Logging setup complete
+2025-04-08 15:07:43,115 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 15:07:43,790 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 16:01:34,827 - cwan - INFO - Logging setup complete
+2025-04-08 16:01:34,828 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 16:01:35,619 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 16:01:36,069 - cwan - INFO - Logging setup complete
+2025-04-08 16:01:36,070 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 16:01:36,818 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 16:02:09,026 - cwan - ERROR - Exception on /dashboard [GET]
 Traceback (most recent call last):
   File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,109 +90,42 @@ Traceback (most recent call last):
   File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\flask\app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\cwan_project_demo\sample_project\cwanext\sample_project\sample_project.py", line 87, in login
-    return render_template("Login.html", error_message=None)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\flask\templating.py", line 150, in render_template
-    return _render(app, template, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\flask\templating.py", line 131, in _render
-    rv = template.render(context)
-         ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\jinja2\environment.py", line 1295, in render
-    self.environment.handle_exception()
-  File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "C:\cwan_project_demo\sample_project\cwanext\sample_project\templates\Login.html", line 13, in top-level template code
-    <form id="login-form" action="{{ url_for('login.login_post') }}" method="post" enctype="application/x-www-form-urlencoded">
-    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\flask\app.py", line 1121, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\flask\app.py", line 1110, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'login.login_post'. Did you mean 'sample_project.login_post' instead?
-2025-04-08 12:16:07,892 - cwan - INFO - Logging setup complete
-2025-04-08 12:16:07,894 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 12:16:08,920 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'routers'
-2025-04-08 12:16:49,792 - cwan - INFO - Logging setup complete
-2025-04-08 12:16:49,794 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 12:16:50,609 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'models'
-2025-04-08 12:20:57,659 - cwan - INFO - Logging setup complete
-2025-04-08 12:20:57,660 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 12:20:58,609 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'models'
-2025-04-08 12:23:35,408 - cwan - INFO - Logging setup complete
-2025-04-08 12:23:35,409 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 12:23:36,210 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'models'
-2025-04-08 12:27:51,751 - cwan - INFO - Logging setup complete
-2025-04-08 12:27:51,752 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 12:27:52,989 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'models'
-2025-04-08 12:29:18,432 - cwan - INFO - Logging setup complete
-2025-04-08 12:29:18,433 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 12:29:19,191 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'models'
-2025-04-08 12:59:53,833 - cwan - INFO - Logging setup complete
-2025-04-08 12:59:53,834 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 12:59:54,625 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'models'
-2025-04-08 13:01:03,231 - cwan - INFO - Logging setup complete
-2025-04-08 13:01:03,232 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:01:04,357 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'models'
-2025-04-08 13:01:47,914 - cwan - INFO - Logging setup complete
-2025-04-08 13:01:47,916 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:01:48,372 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'models'
-2025-04-08 13:03:13,224 - cwan - INFO - Logging setup complete
-2025-04-08 13:03:13,225 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:03:13,752 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'model'
-2025-04-08 13:03:48,964 - cwan - INFO - Logging setup complete
-2025-04-08 13:03:48,965 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:03:49,404 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'model'
-2025-04-08 13:03:49,906 - cwan - INFO - Logging setup complete
-2025-04-08 13:03:49,907 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:03:50,319 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'model'
-2025-04-08 13:03:52,504 - cwan - INFO - Logging setup complete
-2025-04-08 13:03:52,507 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:03:53,049 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'model'
-2025-04-08 13:05:39,031 - cwan - INFO - Logging setup complete
-2025-04-08 13:05:39,032 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:05:39,698 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'models'
-2025-04-08 13:05:45,693 - cwan - INFO - Logging setup complete
-2025-04-08 13:05:45,694 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:05:46,166 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'models'
-2025-04-08 13:05:58,815 - cwan - INFO - Logging setup complete
-2025-04-08 13:05:58,816 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:05:59,296 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'config'
-2025-04-08 13:06:44,406 - cwan - INFO - Logging setup complete
-2025-04-08 13:06:44,408 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:06:45,423 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-08 13:06:55,954 - cwan - INFO - Logging setup complete
-2025-04-08 13:06:55,956 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:06:56,599 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'model'
-2025-04-08 13:07:09,005 - cwan - INFO - Logging setup complete
-2025-04-08 13:07:09,007 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:07:09,711 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-08 13:08:10,865 - cwan - INFO - Logging setup complete
-2025-04-08 13:08:10,866 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:08:11,609 - cwan - ERROR - Failed to load extension cwanext.sample_project: No module named 'sample_project.model'
-2025-04-08 13:09:06,224 - cwan - INFO - Logging setup complete
-2025-04-08 13:09:06,226 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:09:07,270 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-08 13:10:03,038 - cwan - INFO - Logging setup complete
-2025-04-08 13:10:03,040 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:10:03,837 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-08 13:12:29,774 - cwan - INFO - Logging setup complete
-2025-04-08 13:12:29,776 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:12:30,535 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-08 13:12:30,966 - cwan - INFO - Logging setup complete
-2025-04-08 13:12:30,967 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:12:31,603 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-08 13:42:38,457 - cwan - INFO - Logging setup complete
-2025-04-08 13:42:38,459 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:42:39,283 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-08 13:42:39,832 - cwan - INFO - Logging setup complete
-2025-04-08 13:42:39,834 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:42:40,623 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-08 13:48:25,944 - cwan - INFO - Logging setup complete
-2025-04-08 13:48:25,945 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-08 13:48:27,037 - cwan - INFO - Loaded extension cwanext.sample_project
+  File "C:\cwan_project_demo\sample_project\cwanext\sample_project\sample_project.py", line 162, in dashboard
+    return jsonify({"detail": f"An unexpected error occurred: {str(e)}"}), 500
+                                                                   ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-04-08 16:02:43,709 - cwan - ERROR - Exception on /dashboard [GET]
+Traceback (most recent call last):
+  File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\cwan_project_demo\sample_project\cwanext\sample_project\sample_project.py", line 162, in dashboard
+    return jsonify({"detail": f"An unexpected error occurred: {str(e)}"}), 500
+                                                                   ^
+UnboundLocalError: cannot access local variable 'e' where it is not associated with a value
+2025-04-08 16:07:22,745 - cwan - INFO - Logging setup complete
+2025-04-08 16:07:22,747 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 16:07:23,602 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 16:07:24,037 - cwan - INFO - Logging setup complete
+2025-04-08 16:07:24,038 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 16:07:24,689 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 16:09:25,642 - cwan - INFO - Logging setup complete
+2025-04-08 16:09:25,643 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 16:09:26,392 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 16:11:58,732 - cwan - INFO - Logging setup complete
+2025-04-08 16:11:58,733 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 16:11:59,580 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 17:38:15,639 - cwan - INFO - Logging setup complete
+2025-04-08 17:38:15,641 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-08 17:38:16,490 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-08 17:38:16,931 - cwan - INFO - Logging setup complete
+2025-04-08 17:38:16,932 - cwan - INFO - Loading extensions: ['sample_project']

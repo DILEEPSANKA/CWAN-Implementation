@@ -3,7 +3,7 @@ from flask import Blueprint, Flask, request, render_template, abort,jsonify,redi
 from flask import current_app as app
 from cwan.extensions.base_extension import BaseExtension
 from .database import db, login_collection
-from .config.config import User_details,Shipments
+from .config.config import User_details,Shipments,Home,signup,Dashboard,Account
 from .model.model import Signup
 from .routers.Authentication import create_access_token,decode_token
 import re
@@ -25,18 +25,19 @@ class Extension(BaseExtension):
         )
 
     def register_routes(self):
-        # def load_config(collection_name, page_name=None):
-        #     if not page_name:
-        #         return None
-        #     return db[collection_name].find_one({"name": page_name})
         pwd_cxt = CryptContext(schemes=["bcrypt"], deprecated="auto")
-        @self.bp.route("/",methods=["GET"])
+
+        @self.bp.route("/", methods=["GET"])
         def home():
-            return render_template("Home.html")
-        
+            Home_Template = Home.find_one({"section": "home_page"}, {"_id": 0})
+            return render_template(
+                "Home.html",
+                home_template = Home_Template
+            )
         @self.bp.route("/signup", methods=["GET"])
         def sign():
-            return render_template("sign_up.html", error_message=None)
+            signup_template = signup.find_one({"template_name": "signup"})
+            return render_template("sign_up.html", signup_template=signup_template, error_message=None)
 
         @self.bp.route("/signup", methods=["POST"])
         def sign_post():
@@ -86,7 +87,7 @@ class Extension(BaseExtension):
         def login():
             return render_template("Login.html", error_message=None)
 
-        @self.bp.route("/login", methods=["POST"])  # Updated route
+        @self.bp.route("/login", methods=["POST"])  
         def login_post():
             try:
                 username = request.form.get("username")
@@ -113,7 +114,6 @@ class Extension(BaseExtension):
                     "redirect_url": "/dashboard"
                 })
                 response.set_cookie("access_token", f"Bearer {token}", httponly=True, samesite="Strict")
-                print("cookie",response)
                 return response
 
             except Exception as e:
@@ -149,7 +149,7 @@ class Extension(BaseExtension):
             except Exception as e:
                 print(f"Error decoding token: {e}")
                 return None
-    
+            
         @self.bp.route("/dashboard", methods=["GET"])
         def dashboard():
             try:
@@ -160,38 +160,75 @@ class Extension(BaseExtension):
                 role = current_user.get("role", "user")
                 username = current_user.get("username", "User")
 
-                return render_template("Dashboard.html", role=role, username=username)
+                dashboard_template = Dashboard.find_one({"section": "dashboard_page"}, {"_id": 0})
+
+                if dashboard_template is None:
+                    return "Dashboard template not found", 404
+
+                return render_template(
+                    "Dashboard.html",
+                    role=role,
+                    username=username,
+                    dashboard_template=dashboard_template
+                )
 
             except Exception as e:
                 print(f"Error rendering dashboard: {e}")
                 return jsonify({"detail": f"An unexpected error occurred: {str(e)}"}), 500
+
             
+        # @self.bp.route("/account", methods=["GET"])
+        # def account():
+        #     try:
+        #         user = fetch_user_from_cookie()
+        #         print(f"Fetched user: {user}")  
+
+        #         if not user:
+        #             print("User not found in cookie. Redirecting to login.")
+        #             return redirect(url_for("/login") + "?alert=true") 
+
+        #         username = user.get("user", "User")
+        #         email = user.get("email", "N/A")
+        #         role = user.get("role", "user")
+        #         print(f"Rendering template with username={username}, email={email}, role={role}")  
+
+        #         return render_template("Account.html", username=username, email=email, role=role)
+        #     except ValueError as ve:
+        #         print(f"ValueError: {ve}")  
+        #         return jsonify({"detail": str(ve)}), 400
+        #     except Exception as e:
+        #         print(f"Error rendering account page: {e}")  
+        #         return jsonify({"error": "An unexpected error occurred. Please try again later."}), 500
+
         @self.bp.route("/account", methods=["GET"])
         def account():
             try:
-                # Fetch user from cookie
-                user = fetch_user_from_cookie()
-                print(f"Fetched user: {user}")  # Debug log
+                current_user = fetch_user_from_cookie()
+                if current_user is None:
+                    return redirect(url_for("sample_project.login") + "?alert=true")
 
-                if not user:
-                    print("User not found in cookie. Redirecting to login.")
-                    return redirect(url_for("/login") + "?alert=true")  # Redirect if user is not found
+                role = current_user.get("role", "user")
+                username = current_user.get("user", "User")  # assuming key is 'user' not 'username'
+                email = current_user.get("email", "N/A")
 
-                # Extract user details
-                username = user.get("user", "User")
-                email = user.get("email", "N/A")
-                role = user.get("role", "user")
-                print(f"Rendering template with username={username}, email={email}, role={role}")  # Debug log
+                account_template = Account.find_one({"template_name": "account"}, {"_id": 0})
 
-                # Render the account page with user details
-                return render_template("Account.html", username=username, email=email, role=role)
-            except ValueError as ve:
-                print(f"ValueError: {ve}")  # Log ValueError
-                return jsonify({"detail": str(ve)}), 400
+                if account_template is None:
+                    return "Account template not found", 404
+
+                return render_template(
+                    "account.html",
+                    role=role,
+                    username=username,
+                    email=email,
+                    template=account_template
+                )
+
             except Exception as e:
-                print(f"Error rendering account page: {e}")  # Log unexpected errors
+                print(f"Error rendering account page: {e}")
                 return jsonify({"error": "An unexpected error occurred. Please try again later."}), 500
-            
+
+
         @self.bp.route("/newshipment", methods=["GET"])
         def newship():
             token = request.cookies.get("access_token")
@@ -267,16 +304,13 @@ class Extension(BaseExtension):
         @self.bp.route("/myshipment", methods=["GET"])
         def my_shipments():
             try:
-                # Fetch user from cookie
                 current_user = fetch_user_from_cookie()
                 if current_user is None:
                     return redirect(url_for("/login") + "?alert=true")
 
-                # Extract role and email
                 role = current_user.get("role", "user")
                 email = current_user.get("email")
 
-                # Fetch shipments based on role
                 if role == "admin":
                     shipments = list(Shipments.find({}, {"_id": 0}))
                 else:
@@ -284,7 +318,6 @@ class Extension(BaseExtension):
                         return jsonify({"detail": "User email not found."}), 400
                     shipments = list(Shipments.find({"email": email}, {"_id": 0}))
 
-                # Render the Myshipment.html template
                 return render_template("Myshipment.html", shipments=shipments, role=role)
             except Exception as e:
                 print(f"Error fetching shipments: {e}")

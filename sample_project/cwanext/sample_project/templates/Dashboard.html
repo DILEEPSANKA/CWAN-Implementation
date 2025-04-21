@@ -1,35 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-</head>
-    <link rel="stylesheet" href="{{ url_for('sample_project.static', filename='css/Dashboard.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
+    <head>
+        <meta charset="{{ dashboard_template.head.meta_charset }}">
+        <meta name="viewport" content="{{ dashboard_template.head.meta_viewport }}">
+        <title>{{ dashboard_template.head.title }}</title>
+    
+        {% for css in dashboard_template.head.css_links %}
+        {% if css.startswith('http') %}
+            <link rel="stylesheet" href="{{ css }}">
+        {% else %}
+            <link rel="stylesheet" href="{{ url_for('sample_project.static', filename=css) }}">
+        {% endif %}
+    {% endfor %}
+    
+    </head>
+    
 <body>
 
     <canvas id="canvas"></canvas>
 
     <aside class="sidebar">
         <div class="sidebar-header">
-            <img src="{{ url_for('sample_project.static', filename='Images/Exafluence.jpg') }}" alt="logo" />
-            <span style="color: white; padding-left: 25px; font-weight: bold;">Exafluence</span>
+            <img src="{{ url_for('sample_project.static', filename=dashboard_template.sidebar.logo_image) }}" alt="logo" />
+            <span style="color: white; padding-left: 25px; font-weight: bold;">
+                {{ dashboard_template.sidebar.logo_text }}
+            </span>
         </div>
+    
         <ul class="sidebar-links">
             <h4>
-                <span style="color: white;">Main Menu</span>
+                <span style="color: white;">{{ dashboard_template.sidebar.menu_title }}</span>
                 <div class="menu-separator"></div>
             </h4>
-            
-            <li><a href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-            <li><a href="/account"><i class="fas fa-user"></i> My Account</a></li>
-            <li><a href="/myshipment"><i class="fas fa-box"></i> My Shipment</a></li>
-            <li><a href="/newshipment"><i class="fas fa-plus"></i> New Shipment</a></li> 
-            <li><a href="/login" class="logout" onclick="logout(event)"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+    
+            {% for item in dashboard_template.sidebar.menu_items %}
+                <li>
+                    <a href="{{ item.href }}"
+                       {% if item.class %} class="{{ item.class }}" {% endif %}
+                       {% if item.onclick %} onclick="{{ item.onclick }}" {% endif %}>
+                        <i class="{{ item.icon }}"></i> {{ item.name }}
+                    </a>
+                </li>
+            {% endfor %}
         </ul>
     </aside>
+    
 
     <div class="content1">
         <h2 id="welcome-message" style="background-color: #40566d; width: 100%; padding: 20px; text-align: center;">

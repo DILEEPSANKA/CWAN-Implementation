@@ -1,4 +1,4 @@
-2025-04-10 18:03:13,330 - cwan - ERROR - Exception on /login [GET]
+2025-04-10 16:37:08,641 - cwan - ERROR - Exception on /login [GET]
 Traceback (most recent call last):
   File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -25,17 +25,14 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "C:\cwan_project_demo\sample_project\cwanext\sample_project\templates\Login.html", line 16, in top-level template code
-    action="{{ signin_template.container.child.login_form.form.action }}"
+  File "C:\cwan_project_demo\sample_project\cwanext\sample_project\templates\Login.html", line 4, in top-level template code
+    <meta charset="{{ signin_template.head.meta_charset }}">
     ^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\jinja2\environment.py", line 490, in getattr
     return getattr(obj, attribute)
            ^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'container'
-2025-04-10 18:09:23,806 - cwan - INFO - Logging setup complete
-2025-04-10 18:09:23,807 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-10 18:09:24,542 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-10 18:09:41,694 - cwan - ERROR - Exception on /login [GET]
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'head'
+2025-04-10 16:37:17,879 - cwan - ERROR - Exception on /login [GET]
 Traceback (most recent call last):
   File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
@@ -62,65 +59,28 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "C:\cwan_project_demo\sample_project\cwanext\sample_project\templates\Login.html", line 16, in top-level template code
-    action="{{ signin_template.container.child.login_form.form.action }}"
+  File "C:\cwan_project_demo\sample_project\cwanext\sample_project\templates\Login.html", line 4, in top-level template code
+    <meta charset="{{ signin_template.head.meta_charset }}">
     ^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\sanka.dileep\AppData\Local\pypoetry\Cache\virtualenvs\scmxpert-r6r6lqqo-py3.11\Lib\site-packages\jinja2\environment.py", line 490, in getattr
     return getattr(obj, attribute)
            ^^^^^^^^^^^^^^^^^^^^^^^
-jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'container'
-2025-04-10 18:13:28,218 - cwan - INFO - Logging setup complete
-2025-04-10 18:13:28,220 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-10 18:13:29,183 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-10 18:14:50,789 - cwan - INFO - Logging setup complete
-2025-04-10 18:14:50,790 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-10 18:14:51,687 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-10 18:28:04,217 - cwan - INFO - Logging setup complete
-2025-04-10 18:28:04,218 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-10 18:28:05,108 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-10 18:48:57,126 - cwan - INFO - Logging setup complete
-2025-04-10 18:48:57,127 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-10 18:48:57,931 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-10 19:08:03,416 - cwan - INFO - Logging setup complete
-2025-04-10 19:08:03,418 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-10 19:08:04,320 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-10 19:16:48,407 - cwan - INFO - Logging setup complete
-2025-04-10 19:16:48,408 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-10 19:16:49,210 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-10 19:31:59,324 - cwan - INFO - Logging setup complete
-2025-04-10 19:31:59,326 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-10 19:32:00,511 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-10 19:38:30,845 - cwan - INFO - Logging setup complete
-2025-04-10 19:38:30,847 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-10 19:38:31,694 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-10 19:41:48,729 - cwan - INFO - Logging setup complete
-2025-04-10 19:41:48,730 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-10 19:41:49,461 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-10 19:44:34,029 - cwan - INFO - Logging setup complete
-2025-04-10 19:44:34,030 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-10 19:44:34,557 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-10 19:52:12,130 - cwan - INFO - Logging setup complete
-2025-04-10 19:52:12,131 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-10 19:52:12,892 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-10 19:54:40,396 - cwan - INFO - Logging setup complete
-2025-04-10 19:54:40,397 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-10 19:54:41,270 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-10 20:04:47,110 - cwan - INFO - Logging setup complete
-2025-04-10 20:04:47,112 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-10 20:04:48,116 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-10 20:27:45,605 - cwan - INFO - Logging setup complete
-2025-04-10 20:27:45,606 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-10 20:27:46,676 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-18 11:38:18,133 - cwan - INFO - Logging setup complete
-2025-04-18 11:38:18,135 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-18 11:38:19,137 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-21 12:24:38,205 - cwan - INFO - Logging setup complete
-2025-04-21 12:24:38,207 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-21 12:24:39,096 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-21 14:52:57,293 - cwan - INFO - Logging setup complete
-2025-04-21 14:52:57,294 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-21 14:52:58,182 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-21 14:58:09,761 - cwan - INFO - Logging setup complete
-2025-04-21 14:58:09,763 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-21 14:58:11,117 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-21 15:03:23,685 - cwan - INFO - Logging setup complete
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'head'
+2025-04-10 16:38:36,374 - cwan - INFO - Logging setup complete
+2025-04-10 16:38:36,376 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-10 16:38:37,211 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-10 16:55:55,130 - cwan - INFO - Logging setup complete
+2025-04-10 16:55:55,131 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-10 16:55:55,749 - cwan - ERROR - Failed to load extension cwanext.sample_project: cannot import name 'signin' from 'cwanext.sample_project.config.config' (C:\cwan_project_demo\sample_project\cwanext\sample_project\config\config.py)
+2025-04-10 16:56:43,570 - cwan - INFO - Logging setup complete
+2025-04-10 16:56:43,571 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-10 16:56:44,105 - cwan - ERROR - Failed to load extension cwanext.sample_project: cannot import name 'signin' from 'cwanext.sample_project.config.config' (C:\cwan_project_demo\sample_project\cwanext\sample_project\config\config.py)
+2025-04-10 16:57:40,604 - cwan - INFO - Logging setup complete
+2025-04-10 16:57:40,605 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-10 16:57:41,774 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-10 17:13:22,983 - cwan - INFO - Logging setup complete
+2025-04-10 17:13:22,984 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-10 17:13:24,114 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-10 17:47:32,021 - cwan - INFO - Logging setup complete
+2025-04-10 17:47:32,022 - cwan - INFO - Loading extensions: ['sample_project']
+2025-04-10 17:47:32,949 - cwan - INFO - Loaded extension cwanext.sample_project

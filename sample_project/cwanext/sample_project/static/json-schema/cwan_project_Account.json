@@ -1,0 +1,39 @@
+{
+    "template_name": "account",
+    "head": {
+      "meta_charset": "UTF-8",
+      "meta_viewport": "width=device-width, initial-scale=1.0",
+      "title": "Account",
+      "google_font": "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
+      "bootstrap_css": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+      "custom_css": "css/Account.css",
+      "fontawesome_cdn": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    },
+    "sidebar": {
+      "logo": {
+        "src": "Images/Exafluence.jpg",
+        "text": "Exafluence"
+      },
+      "links": [
+        { "href": "/dashboard", "class": "active", "icon": "fas fa-tachometer-alt", "text": "Dashboard" },
+        { "href": "/account", "class": "active", "icon": "fas fa-user", "text": "My Account" },
+        { "href": "/myshipment", "class": "active", "icon": "fas fa-box", "text": "My Shipment" },
+        { "href": "/newshipment", "class": "active", "icon": "fas fa-plus", "text": "New Shipment" },
+        { "href": "/login", "class": "logout", "icon": "fas fa-sign-out-alt", "text": "Logout", "onclick": "logout(event)" }
+      ]
+    },
+    "content": {
+      "icon": "fas fa-user",
+      "title": "Account Information",
+      "fields": [
+        { "label": "Username", "id": "username", "type": "text", "readonly": true },
+        { "label": "Email", "id": "email", "type": "email", "readonly": true },
+        { "label": "Role", "id": "role", "type": "text", "readonly": true }
+      ],
+      "buttons": [
+        { "class": "action-button", "type": "button", "onclick": "logout(event)", "text": "Logout" }
+      ]
+    },
+    "script": "js/Account.js"
+  }
+  

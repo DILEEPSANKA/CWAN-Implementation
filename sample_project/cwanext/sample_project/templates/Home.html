@@ -1,58 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('sample_project.static', filename='css/Home.css') }}">
+    <meta charset="{{ home_template.head.meta_charset }}">
+    <meta name="viewport" content="{{ home_template.head.meta_viewport }}">
+    <link href="{{ home_template.head.google_font }}" rel="stylesheet">
+    <link href="{{ home_template.head.bootstrap_css }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('sample_project.static', filename=home_template.head.custom_css) }}">
 </head>
+
 <body>
 
     <nav class="nav">
         <div class="logo">
-            <img src="{{ url_for('sample_project.static', filename='Images/Exafluence.jpg') }}" alt="Company Logo"> 
-            <span>Exafluence</span>
+            <img src="{{ url_for('sample_project.static', filename=home_template.nav.logo_image) }}" alt="Company Logo"> 
+            <span>{{ home_template.nav.logo_text }}</span>
         </div>
         <div class="nav-links">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">About Us</a>
-            <a href="/signup">Sign Up</a>
-            <a href="/login">Login</a>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</a>
+            {% for link in home_template.nav.nav_links %}
+                {% if link.modal %}
+                    <a href="{{ link.href }}" data-bs-toggle="modal" data-bs-target="#{{ link.modal }}">{{ link.name }}</a>
+                {% else %}
+                    <a href="{{ link.href }}">{{ link.name }}</a>
+                {% endif %}
+            {% endfor %}
         </div>
     </nav>
+    
 
     <div class="main-content"> </div>
 
-    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+    <div class="modal fade" id="{{ home_template.about_modal.id }}" tabindex="-1" aria-labelledby="{{ home_template.about_modal.id }}Label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content about-card">
                 <div class="modal-header">
-                    <h2 class="modal-title" id="aboutModalLabel">About Us</h2>
+                    <h2 class="modal-title" id="{{ home_template.about_modal.id }}Label">{{ home_template.about_modal.title }}</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>We provide smart supply chain solutions designed to make global logistics faster, more efficient, and more reliable. By using advanced technology and data-driven insights, we help businesses streamline operations and stay ahead in a changing market.</p>
+                    <p>{{ home_template.about_modal.description }}</p>
                 </div>
             </div>
         </div>
     </div>
+    
 
-    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal fade" id="{{ home_template.contact_modal.id }}" tabindex="-1" aria-labelledby="{{ home_template.contact_modal.id }}Label" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content contact-card">
                 <div class="modal-header">
-                    <h2 class="modal-title" id="contactModalLabel">Contact Us</h2>
+                    <h2 class="modal-title" id="{{ home_template.contact_modal.id }}Label">{{ home_template.contact_modal.title }}</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Got questions or want to know more about what we offer? Reach out to us today!</p>
-                    <p>Email: <a href="mailto:Exasupport@gmail.com">Exasupport@gmail.com</a></p>
-                    <p>Phone: +91 9992199211</p>
+                    <p>{{ home_template.contact_modal.description }}</p>
+                    <p>Email: <a href="mailto:{{ home_template.contact_modal.email }}">{{ home_template.contact_modal.email }}</a></p>
+                    <p>Phone: {{ home_template.contact_modal.phone }}</p>
                 </div>
             </div>
         </div>
     </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 

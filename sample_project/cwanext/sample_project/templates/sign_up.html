@@ -3,54 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup Page</title>
+    <title>{{ signup_template.head.title }}</title>
     <link rel="stylesheet" href="{{ url_for('sample_project.static', filename='css/sign_up.css') }}">
 </head>
+
 <body>
     <div class="container">
         <div class="form-container">
-            <h2>Signup</h2>
-            
-            
+            <h2>{{ signup_template.body.container.form_container.heading }}</h2>
+
             {% if error_message %}
                 <div class="error" id="error_message">{{ error_message }}</div>
             {% endif %}
 
-            
-            <form id="signupForm" method="POST" action="/signup">
-                <label for="username">Username:</label> 
-                 
-                <input type="text" id="username" name="username" value="{{ username }}" required>
-                <div class="error" id="usernameError"></div>
+            <form id="{{ signup_template.body.container.form_container.form.id }}" 
+                  method="{{ signup_template.body.container.form_container.form.method }}" 
+                  action="{{ signup_template.body.container.form_container.form.action }}">
 
-                <label for="email">Email ID:</label>
-                <input type="email" id="email" name="email" value="{{ email }}" required>
-                <div class="error" id="emailError"></div>
-
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <div class="error" id="passwordError"></div>
-
-                <label for="confirm-password">Confirm Password:</label>
-                <input type="password" id="confirm-password" name="confirm" required>
-                <div class="error" id="confirmPasswordError"></div>
+                {% for field in signup_template.body.container.form_container.form.fields %}
+                    <label for="{{ field.id }}">{{ field.label }}</label>
+                    <input type="{{ field.type }}" 
+                           id="{{ field.id }}" 
+                           name="{{ field.name }}" 
+                           {% if field.value %} value="{{ field.value }}" {% endif %}
+                           {% if field.required %} required {% endif %}>
+                    <div class="error" id="{{ field.error_id }}"></div>
+                {% endfor %}
 
                 <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                    <input type="checkbox" id="terms" name="terms" required>
-                    <label for="terms">
-                        By creating an account, you agree to our 
-                        <a href="terms-and-conditions.html" target="_blank">Terms & Conditions</a>
+                    <input type="checkbox" id="{{ signup_template.body.container.form_container.form.checkbox.id }}" 
+                           name="{{ signup_template.body.container.form_container.form.checkbox.name }}" 
+                           {% if signup_template.body.container.form_container.form.checkbox.required %} required {% endif %}>
+
+                    <label for="{{ signup_template.body.container.form_container.form.checkbox.id }}">
+                        {{ signup_template.body.container.form_container.form.checkbox.label }}
+                        <a href="{{ signup_template.body.container.form_container.form.checkbox.link_href }}" target="_blank">
+                            {{ signup_template.body.container.form_container.form.checkbox.link_text }}
+                        </a>
                     </label>
                 </div>
 
-                <button type="submit">Create Account</button>
+                <button type="submit">
+                    {{ signup_template.body.container.form_container.form.submit_button.text }}
+                </button>
 
                 <div class="login-link">
-                    <p>Already have an account? <a href="/login">Login</a></p>
+                    <p>
+                        {{ signup_template.body.container.form_container.form.login_link.text }} 
+                        <a href="{{ signup_template.body.container.form_container.form.login_link.link_href }}">
+                            {{ signup_template.body.container.form_container.form.login_link.link_text }}
+                        </a>
+                    </p>
                 </div>
             </form>
         </div>
     </div>
-    <script src="{{ url_for('sample_project.static', filename='js/sign-up.js') }}"></script>
 </body>
+<script src="{{ url_for('sample_project.static', filename='js/sign-up.js') }}"></script>
 </html>
