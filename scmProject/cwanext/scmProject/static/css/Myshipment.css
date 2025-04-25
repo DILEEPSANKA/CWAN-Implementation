@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #dfe0e4;
+    display: flex;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 85px; 
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+    background: #40566d;
+    padding: 25px 20px;
+    transition: all 0.4s ease;
+}
+
+.sidebar:hover {
+    width: 260px;
+}
+
+.sidebar .sidebar-header {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .sidebar-header img {
+    width: 42px;
+    border-radius: 50%;
+}
+
+.sidebar .sidebar-header h2 {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-left: 23px;
+    opacity: 0; 
+    transition: opacity 0.3s;
+}
+
+.sidebar:hover .sidebar-header h2 {
+    opacity: 1; 
+}
+
+.sidebar-links h4 {
+    color: #fff;
+    font-weight: 500;
+    white-space: nowrap;
+    margin: 10px 0;
+    position: relative;
+}
+
+.sidebar-links h4 span {
+    opacity: 0;
+}
+
+.sidebar:hover .sidebar-links h4 span {
+    opacity: 1;
+}
+
+.sidebar-links .menu-separator {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(1);
+    transform: translateY(-50%);
+    background: #4f52ba;
+    transform-origin: right;
+    transition-delay: 0.2s;
+}
+
+.sidebar:hover .sidebar-links .menu-separator {
+    transition-delay: 0s;
+    transform: scaleX(0);
+}
+
+.sidebar-links {
+    list-style: none;
+    margin-top: 20px;
+    height: 80%;
+    overflow-y: auto;
+    scrollbar-width: none; 
+}
+
+.sidebar-links::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+    color: #fff;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 15px 10px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.sidebar-links li a .text {
+    opacity: 0; 
+    transition: opacity 0.3s; 
+}
+
+.sidebar:hover .sidebar-links li a .text {
+    opacity: 1;
+}
+
+.sidebar-links li a:hover {
+    color: #161a2d;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.sidebar-links li a.active {
+    background-color: #fff; 
+    color: #161a2d; 
+    border-radius: 4px; 
+}
+
+.content {
+    margin-left: 100px;
+    padding: 20px;
+    flex-grow: 1;
+    transition: margin-left 0.4s; 
+}
+
+.sidebar:hover + .content {
+    margin-left: 260px; 
+}
+
+h2 {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px; 
+    overflow: hidden; 
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #b2c3e7;
+}
+
+tr:hover {
+    background-color: #dfe6e9;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+    width: 500px; 
+}
+
+#searchInput {
+    padding: 12px 40px 12px 15px;
+    width: 100%;
+    border: 2px solid #da7648; 
+    border-radius: 50px;
+    font-size: 16px;
+    background-color: #ecdfc1;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+#searchInput::placeholder {
+    color: #888;
+    font-weight: 500;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 500px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    font-size: 18px;
+    color: #555;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border: 2px solid #da7648; 
+    border-radius: 50px;
+    font-size: 16px;
+    background-color: #ecdfc1;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}

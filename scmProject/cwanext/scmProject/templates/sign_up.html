@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ signup_template.head.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('scmProject.static', filename='css/sign_up.css') }}">
+    <style>
+        {% for selector, style in signup_template.styles.items() %}
+            {{ selector }} {
+                {% for property, value in style.items() %}
+                    {{ property }}: {{ value }};
+                {% endfor %}
+            }
+        {% endfor %}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>{{ signup_template.body.container.form_container.heading }}</h2>
+
+            {% if error_message %}
+                <div class="error" id="error_message">{{ error_message }}</div>
+            {% endif %}
+
+            <form id="{{ signup_template.body.container.form_container.form.id }}" 
+                  method="{{ signup_template.body.container.form_container.form.method }}" 
+                  action="{{ signup_template.body.container.form_container.form.action }}">
+
+                {% for field in signup_template.body.container.form_container.form.fields %}
+                    <label for="{{ field.id }}">{{ field.label }}</label>
+                    <input type="{{ field.type }}" 
+                           id="{{ field.id }}" 
+                           name="{{ field.name }}" 
+                           {% if field.value and field.value.strip() %} value="{{ field.value }}" {% endif %}
+                           {% if field.required %} required {% endif %}>
+                    <div class="error" id="{{ field.error_id }}"></div>
+                {% endfor %}
+
+                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <input type="checkbox" id="{{ signup_template.body.container.form_container.form.checkbox.id }}" 
+                           name="{{ signup_template.body.container.form_container.form.checkbox.name }}" 
+                           {% if signup_template.body.container.form_container.form.checkbox.required %} required {% endif %}>
+
+                    <label for="{{ signup_template.body.container.form_container.form.checkbox.id }}">
+                        {{ signup_template.body.container.form_container.form.checkbox.label }}
+                        <a href="{{ signup_template.body.container.form_container.form.checkbox.link_href }}" target="_blank">
+                            {{ signup_template.body.container.form_container.form.checkbox.link_text }}
+                        </a>
+                    </label>
+                </div>
+
+                <button type="submit">
+                    {{ signup_template.body.container.form_container.form.submit_button.text }}
+                </button>
+
+                <div class="login-link">
+                    <p>
+                        {{ signup_template.body.container.form_container.form.login_link.text }} 
+                        <a href="{{ signup_template.body.container.form_container.form.login_link.link_href }}">
+                            {{ signup_template.body.container.form_container.form.login_link.link_text }}
+                        </a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="{{ url_for('scmProject.static', filename='js/sign-up.js') }}"></script>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="{{ url_for('scmProject.static', filename='css/login.css') }}">
+</head>
+ 
+<body>
+  <div class="container">
+    <div class="login-form">
+      <form id="login-form" action="/login" method="post" enctype="application/x-www-form-urlencoded">
+        <div class="form-title">Login</div>
+ 
+        <div class="form-input">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Enter Username" required>
+        </div>
+ 
+        <div class="form-input">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter Password" required>
+        </div>
+ 
+        <div class="form-input captcha">
+          <label for="captcha">Enter CAPTCHA</label>
+          <div class="preview" id="captchaPreview"></div>
+          <div class="captcha-form">
+            <input type="text" id="captcha" name="captcha" placeholder="Enter CAPTCHA" required>
+            <button type="button" class="captcha-refresh" onclick="generateCaptcha()">Refresh</button>
+          </div>
+          <div class="captcha-error" id="captchaError" style="color: red; display: none;">
+            Incorrect CAPTCHA. Please try again.
+          </div>
+        </div>
+ 
+        <div class="form-input">
+          <button type="submit" id="login-btn">Login</button>
+        </div>
+ 
+        <div class="form-links">
+          <span>Don't have an account? <a href="/signup" class="signup-link">Sign up</a></span><br>
+          <span><a href="#" id="forgot-password-link">Forgot Password?</a></span>
+        </div>
+ 
+        {% if error_message %}
+        <div class="error-message" style="color: red; margin-top: 10px;">
+          {{ error_message }}
+        </div>
+        {% endif %}
+      </form>
+ 
+      <form id="forgot-password-form" style="display: none;">
+        <div class="form-title">Reset Password</div>
+      
+        <div class="form-input">
+          <label for="reset-username">Username</label>
+          <input type="text" id="reset-username" name="reset_username" placeholder="Enter Username" required>
+        </div>
+      
+        <div class="form-input">
+          <label for="reset-email">Email</label>
+          <input type="email" id="reset-email" name="reset_email" placeholder="Enter Email" required>
+        </div>
+      
+        <div class="form-input">
+          <label for="new-password">New Password</label>
+          <input type="password" id="new-password" name="new_password" placeholder="Enter New Password" required>
+        </div>
+      
+        <div class="form-input">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm Password" required>
+        </div>
+      
+        <div class="form-input">
+          <button type="button" id="reset-password-btn">Submit Password</button>
+        </div>
+      
+        <div class="form-links">
+          <span><a href="#" id="back-to-login">Back to Login</a></span>
+        </div>
+      </form>
+    </div>
+  </div>
+ 
+  <script src="{{ url_for('scmProject.static', filename='js/login.js') }}"></script>
+
+</body>
+</html>

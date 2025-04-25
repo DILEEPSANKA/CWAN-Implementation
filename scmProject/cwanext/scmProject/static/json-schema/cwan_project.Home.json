@@ -1,0 +1,141 @@
+{
+  "section": "home_page",
+  "head": {
+    "meta_charset": "UTF-8",
+    "meta_viewport": "width=device-width, initial-scale=1.0",
+    "google_font": "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap",
+    "bootstrap_css": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css",
+    "custom_css": "css/Home.css"
+  },
+  "nav": {
+    "logo_image": "Images/Exafluence.jpg",
+    "logo_text": "Exafluence",
+    "nav_links": [
+      {
+        "name": "About Us",
+        "href": "#",
+        "modal": "aboutModal"
+      },
+      {
+        "name": "Sign Up",
+        "href": "/signup"
+      },
+      {
+        "name": "Login",
+        "href": "/login"
+      },
+      {
+        "name": "Contact Us",
+        "href": "#",
+        "modal": "contactModal"
+      }
+    ]
+  },
+  "about_modal": {
+    "id": "aboutModal",
+    "title": "About Us",
+    "description": "We provide smart supply chain solutions designed to make global logistics faster, more efficient, and more reliable. By using advanced technology and data-driven insights, we help businesses streamline operations and stay ahead in a changing market."
+  },
+  "contact_modal": {
+    "id": "contactModal",
+    "title": "Contact Us",
+    "description": "Got questions or want to know more about what we offer? Reach out to us today!",
+    "email": "Exasupport@gmail.com",
+    "phone": "+91 9992199211"
+  },
+  "styles": {
+    "*": {
+      "margin": "0",
+      "padding": "0",
+      "box-sizing": "border-box"
+    },
+    "body": {
+      "font-family": "'Roboto', sans-serif",
+      "color": "#fff",
+      "margin": "0",
+      "overflow-x": "hidden"
+    },
+    ".nav": {
+      "position": "fixed",
+      "top": "0",
+      "width": "100%",
+      "display": "flex",
+      "align-items": "center",
+      "justify-content": "space-between",
+      "padding": "20px",
+      "z-index": "10",
+      "background-color": "rgba(0, 0, 0, 0.5)"
+    },
+    ".nav .logo": {
+      "display": "flex",
+      "align-items": "center"
+    },
+    ".nav .logo img": {
+      "height": "50px",
+      "width": "50px",
+      "border-radius": "50%",
+      "margin-right": "10px"
+    },
+    ".nav .logo span": {
+      "font-size": "24px",
+      "font-weight": "700",
+      "color": "#fff"
+    },
+    ".nav .nav-links a": {
+      "margin-left": "20px",
+      "text-decoration": "none",
+      "color": "white",
+      "font-weight": "500",
+      "font-size": "18px",
+      "transition": "color 0.3s ease",
+      "cursor": "pointer"
+    },
+    ".nav .nav-links a:hover": {
+      "color": "#FFD700"
+    },
+      ".main-content": {
+        "position": "relative",
+        "height": "100vh",
+        "display": "flex",
+        "flex-direction": "column",
+        "justify-content": "center",
+        "align-items": "center",
+        "text-align": "center",
+        "color": "#e9f5db",
+        "z-index": "2"
+      },
+      ".main-content::before": {
+        "content": "''",
+        "position": "absolute",
+        "top": "0",
+        "left": "0",
+        "width": "100%",
+        "height": "100%",
+        "background": "url('/scmProject/static/images/h1.jpg') no-repeat center center/cover"
+      },
+    ".about-card": {
+      "background": "linear-gradient(135deg, #007bff, #2c3e50)",
+      "box-shadow": "0px 4px 20px rgba(0, 0, 0, 0.3)"
+    },
+    ".about-card .modal-title": {
+      "color": "#FFD700",
+      "font-weight": "bold"
+    },
+    ".about-card .modal-body": {
+      "font-size": "18px",
+      "line-height": "1.6"
+    },
+    ".contact-card": {
+      "background": "linear-gradient(135deg, #dfe4e7, #6c757d)",
+      "box-shadow": "0px 4px 20px rgba(0, 0, 0, 0.3)"
+    },
+    ".contact-card .modal-title": {
+      "color": "#2d2d2d",
+      "font-weight": "bold"
+    },
+    ".contact-card .modal-body": {
+      "font-size": "18px",
+      "line-height": "1.6"
+    }
+  }
+}

@@ -1,0 +1,2 @@
+[cwan.extensions]
+scmProject = cwanext.scmProject.scmProject:Extension

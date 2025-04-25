@@ -1,0 +1,13 @@
+setup.cfg
+setup.py
+cwanext/__init__.py
+cwanext/scmProject/__init__.py
+cwanext/scmProject/database.py
+cwanext/scmProject/scmProject.py
+scmProject.egg-info/PKG-INFO
+scmProject.egg-info/SOURCES.txt
+scmProject.egg-info/dependency_links.txt
+scmProject.egg-info/entry_points.txt
+scmProject.egg-info/namespace_packages.txt
+scmProject.egg-info/requires.txt
+scmProject.egg-info/top_level.txt

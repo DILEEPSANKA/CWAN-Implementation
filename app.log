@@ -1,29 +1,72 @@
-2025-04-21 15:03:23,686 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-21 15:03:24,575 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-21 15:05:37,856 - cwan - INFO - Logging setup complete
-2025-04-21 15:05:37,858 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-21 15:05:38,840 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-21 16:14:06,356 - cwan - INFO - Logging setup complete
-2025-04-21 16:14:06,358 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-21 16:14:07,117 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-21 16:15:01,757 - cwan - INFO - Logging setup complete
-2025-04-21 16:15:01,758 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-21 16:15:02,577 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-21 16:16:39,483 - cwan - INFO - Logging setup complete
-2025-04-21 16:16:39,484 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-21 16:16:40,418 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-21 16:23:30,301 - cwan - INFO - Logging setup complete
-2025-04-21 16:23:30,302 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-21 16:23:31,144 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-21 16:33:05,874 - cwan - INFO - Logging setup complete
-2025-04-21 16:33:05,875 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-21 16:33:06,671 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-21 16:41:44,169 - cwan - INFO - Logging setup complete
-2025-04-21 16:41:44,170 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-21 16:41:45,185 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-21 16:43:14,679 - cwan - INFO - Logging setup complete
-2025-04-21 16:43:14,680 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-21 16:43:15,481 - cwan - INFO - Loaded extension cwanext.sample_project
-2025-04-21 16:44:43,852 - cwan - INFO - Logging setup complete
-2025-04-21 16:44:43,854 - cwan - INFO - Loading extensions: ['sample_project']
-2025-04-21 16:44:44,687 - cwan - INFO - Loaded extension cwanext.sample_project
+2025-04-24 15:25:01,045 - cwan - INFO - Logging setup complete
+2025-04-24 15:25:01,046 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:25:01,048 - cwan - ERROR - Failed to load extension cwanext.scmProject: No module named 'cwanext.scmProject.sample_project'
+2025-04-24 15:26:59,702 - cwan - INFO - Logging setup complete
+2025-04-24 15:26:59,703 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:26:59,705 - cwan - ERROR - Failed to load extension cwanext.scmProject: No module named 'cwanext.scmProject.sample_project'
+2025-04-24 15:30:57,434 - cwan - INFO - Logging setup complete
+2025-04-24 15:30:57,436 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:30:57,438 - cwan - ERROR - Failed to load extension cwanext.scmProject: No module named 'cwanext.scmProject.sample_project'
+2025-04-24 15:30:57,949 - cwan - INFO - Logging setup complete
+2025-04-24 15:30:57,950 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:30:57,953 - cwan - ERROR - Failed to load extension cwanext.scmProject: No module named 'cwanext.scmProject.sample_project'
+2025-04-24 15:38:08,950 - cwan - INFO - Logging setup complete
+2025-04-24 15:38:08,952 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:38:08,954 - cwan - ERROR - Failed to load extension cwanext.scmProject: No module named 'cwanext.scmProject.sample_project'
+2025-04-24 15:38:09,471 - cwan - INFO - Logging setup complete
+2025-04-24 15:38:09,472 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:38:09,474 - cwan - ERROR - Failed to load extension cwanext.scmProject: No module named 'cwanext.scmProject.sample_project'
+2025-04-24 15:44:22,596 - cwan - INFO - Logging setup complete
+2025-04-24 15:44:22,597 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:44:23,332 - cwan - ERROR - Failed to load extension cwanext.scmProject: No module named 'pydantic'
+2025-04-24 15:44:23,869 - cwan - INFO - Logging setup complete
+2025-04-24 15:44:23,871 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:44:24,443 - cwan - ERROR - Failed to load extension cwanext.scmProject: No module named 'pydantic'
+2025-04-24 15:45:01,722 - cwan - INFO - Logging setup complete
+2025-04-24 15:45:01,724 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:45:02,598 - cwan - ERROR - Failed to load extension cwanext.scmProject: No module named 'jose'
+2025-04-24 15:45:03,257 - cwan - INFO - Logging setup complete
+2025-04-24 15:45:03,259 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:45:03,986 - cwan - ERROR - Failed to load extension cwanext.scmProject: No module named 'jose'
+2025-04-24 15:45:29,760 - cwan - INFO - Logging setup complete
+2025-04-24 15:45:29,762 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:45:49,442 - cwan - INFO - Logging setup complete
+2025-04-24 15:45:49,444 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:47:15,096 - cwan - INFO - Logging setup complete
+2025-04-24 15:47:15,097 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:50:10,092 - cwan - INFO - Logging setup complete
+2025-04-24 15:50:10,093 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:50:11,052 - cwan - ERROR - Failed to load extension cwanext.scmProject: No module named 'passlib'
+2025-04-24 15:50:11,554 - cwan - INFO - Logging setup complete
+2025-04-24 15:50:11,557 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:50:12,290 - cwan - ERROR - Failed to load extension cwanext.scmProject: No module named 'passlib'
+2025-04-24 15:53:38,251 - cwan - INFO - Logging setup complete
+2025-04-24 15:53:38,252 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:53:39,072 - cwan - INFO - Loaded extension cwanext.scmProject
+2025-04-24 15:53:39,630 - cwan - INFO - Logging setup complete
+2025-04-24 15:53:39,631 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 15:53:40,369 - cwan - INFO - Loaded extension cwanext.scmProject
+2025-04-24 16:50:18,195 - cwan - INFO - Logging setup complete
+2025-04-24 16:50:18,197 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 16:50:19,019 - cwan - INFO - Loaded extension cwanext.scmProject
+2025-04-24 16:50:19,471 - cwan - INFO - Logging setup complete
+2025-04-24 16:50:19,472 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 16:50:20,322 - cwan - INFO - Loaded extension cwanext.scmProject
+2025-04-24 16:57:57,678 - cwan - INFO - Logging setup complete
+2025-04-24 16:57:57,679 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 16:57:59,048 - cwan - INFO - Loaded extension cwanext.scmProject
+2025-04-24 16:57:59,486 - cwan - INFO - Logging setup complete
+2025-04-24 16:57:59,487 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 16:58:00,528 - cwan - INFO - Loaded extension cwanext.scmProject
+2025-04-24 17:02:52,205 - cwan - INFO - Logging setup complete
+2025-04-24 17:02:52,207 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 17:02:53,010 - cwan - INFO - Loaded extension cwanext.scmProject
+2025-04-24 20:40:24,177 - cwan - INFO - Logging setup complete
+2025-04-24 20:40:24,178 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-24 20:40:24,971 - cwan - INFO - Loaded extension cwanext.scmProject
+2025-04-25 12:09:48,614 - cwan - INFO - Logging setup complete
+2025-04-25 12:09:48,616 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-25 12:09:49,580 - cwan - INFO - Loaded extension cwanext.scmProject
+2025-04-25 13:28:17,676 - cwan - INFO - Logging setup complete
+2025-04-25 13:28:17,677 - cwan - INFO - Loading extensions: ['scmProject']
+2025-04-25 13:28:18,550 - cwan - INFO - Loaded extension cwanext.scmProject

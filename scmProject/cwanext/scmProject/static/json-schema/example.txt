@@ -1,0 +1,702 @@
+{
+    "section": "home_page",
+    "head": {
+      "meta_charset": "UTF-8",
+      "meta_viewport": "width=device-width, initial-scale=1.0",
+      "google_font": "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap",
+      "bootstrap_css": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    },
+    "nav": {
+      "logo_image": "Images/Exafluence.jpg",
+      "logo_text": "Exafluence",
+      "nav_links": [
+        {
+          "name": "About Us",
+          "href": "#",
+          "modal": "aboutModal"
+        },
+        {
+          "name": "Sign Up",
+          "href": "/signup"
+        },
+        {
+          "name": "Login",
+          "href": "/login"
+        },
+        {
+          "name": "Contact Us",
+          "href": "#",
+          "modal": "contactModal"
+        }
+      ]
+    },
+    "about_modal": {
+      "id": "aboutModal",
+      "title": "About Us",
+      "description": "We provide smart supply chain solutions designed to make global logistics faster, more efficient, and more reliable. By using advanced technology and data-driven insights, we help businesses streamline operations and stay ahead in a changing market."
+    },
+    "contact_modal": {
+      "id": "contactModal",
+      "title": "Contact Us",
+      "description": "Got questions or want to know more about what we offer? Reach out to us today!",
+      "email": "Exasupport@gmail.com",
+      "phone": "+91 9992199211"
+    },
+    "styles": {
+      "*": {
+        "margin": "0",
+        "padding": "0",
+        "box-sizing": "border-box"
+      },
+      "body": {
+        "font-family": "'Roboto', sans-serif",
+        "color": "#fff",
+        "margin": "0",
+        "overflow-x": "hidden"
+      },
+      ".nav": {
+        "position": "fixed",
+        "top": "0",
+        "width": "100%",
+        "display": "flex",
+        "align-items": "center",
+        "justify-content": "space-between",
+        "padding": "20px",
+        "z-index": "10",
+        "background-color": "rgba(0, 0, 0, 0.5)"
+      },
+      ".nav .logo": {
+        "display": "flex",
+        "align-items": "center"
+      },
+      ".nav .logo img": {
+        "height": "50px",
+        "width": "50px",
+        "border-radius": "50%",
+        "margin-right": "10px"
+      },
+      ".nav .logo span": {
+        "font-size": "24px",
+        "font-weight": "700",
+        "color": "#fff"
+      },
+      ".nav .nav-links a": {
+        "margin-left": "20px",
+        "text-decoration": "none",
+        "color": "white",
+        "font-weight": "500",
+        "font-size": "18px",
+        "transition": "color 0.3s ease",
+        "cursor": "pointer"
+      },
+      ".nav .nav-links a:hover": {
+        "color": "#FFD700"
+      },
+      ".main-content": {
+        "position": "relative",
+        "height": "100vh",
+        "display": "flex",
+        "flex-direction": "column",
+        "justify-content": "center",
+        "align-items": "center",
+        "text-align": "center",
+        "color": "#e9f5db",
+        "z-index": "2"
+      },
+      ".main-content::before": {
+        "content": "''",
+        "position": "absolute",
+        "top": "0",
+        "left": "0",
+        "width": "100%",
+        "height": "100%",
+        "background": "{{ url_for('scmProject.static', filename=/images/h1.jpg) }}"
+      },
+      ".main-content h1": {
+        "font-size": "60px",
+        "font-weight": "700",
+        "margin-bottom": "20px",
+        "color": "#E5E9EC"
+      },
+      ".main-content p": {
+        "font-size": "30px",
+        "line-height": "1.5",
+        "margin-bottom": "40px",
+        "color": "#FFF3B0"
+      },
+      ".modal-content": {
+        "border-radius": "15px",
+        "padding": "20px",
+        "color": "#fff"
+      },
+      ".about-card": {
+        "background": "linear-gradient(135deg, #007bff, #2c3e50)",
+        "box-shadow": "0px 4px 20px rgba(0, 0, 0, 0.3)"
+      },
+      ".about-card .modal-title": {
+        "color": "#FFD700",
+        "font-weight": "bold"
+      },
+      ".about-card .modal-body": {
+        "font-size": "18px",
+        "line-height": "1.6"
+      },
+      ".contact-card": {
+        "background": "linear-gradient(135deg, #dfe4e7, #6c757d)",
+        "box-shadow": "0px 4px 20px rgba(0, 0, 0, 0.3)"
+      },
+      ".contact-card .modal-title": {
+        "color": "#2d2d2d",
+        "font-weight": "bold"
+      },
+      ".contact-card .modal-body": {
+        "font-size": "18px",
+        "line-height": "1.6"
+      }
+  
+    },
+    "background-image":"Images/Exafluence.jpg"
+  }
+  
+    <style>
+        {% for selector, style in home_template.styles.items() %}
+            {{ selector }} {
+                {% for property, value in style.items() %}
+                    {{ property }}: {{ value }};
+                {% endfor %}
+            }
+        {% endfor %}
+    </style>
+
+
+  {
+    "template_name": "signup",
+    "head": {
+      "meta_charset": "UTF-8",
+      "meta_viewport": "width=device-width, initial-scale=1.0",
+      "title": "Signup Page",
+      "custom_css": "css/sign_up.css"
+    },
+    "body": {
+      "container": {
+        "form_container": {
+          "heading": "Signup",
+          "error_message_id": "error_message",
+          "form": {
+            "id": "signupForm",
+            "method": "POST",
+            "action": "/signup",
+            "fields": [
+              {
+                "label": "Username:",
+                "type": "text",
+                "id": "username",
+                "name": "username",
+                "value": "{{ username | default('') }}",
+                "required": true,
+                "error_id": "usernameError"
+              },
+              {
+                "label": "Email ID:",
+                "type": "email",
+                "id": "email",
+                "name": "email",
+                "value": "{{ email | default('') }}",
+                "required": true,
+                "error_id": "emailError"
+              },
+              {
+                "label": "Password:",
+                "type": "password",
+                "id": "password",
+                "name": "password",
+                "required": true,
+                "error_id": "passwordError"
+              },
+              {
+                "label": "Confirm Password:",
+                "type": "password",
+                "id": "confirm-password",
+                "name": "confirm",
+                "required": true,
+                "error_id": "confirmPasswordError"
+              }
+            ],
+            "checkbox": {
+              "id": "terms",
+              "name": "terms",
+              "required": true,
+              "label": "By creating an account, you agree to our",
+              "link_href": "terms-and-conditions.html",
+              "link_text": "Terms & Conditions"
+            },
+            "submit_button": {
+              "text": "Create Account"
+            },
+            "login_link": {
+              "text": "Already have an account?",
+              "link_href": "/login",
+              "link_text": "Login"
+            }
+          }
+        }
+      }
+    },
+    "styles": {
+      "body": {
+        "font-family": "Arial, sans-serif",
+        "display": "flex",
+        "justify-content": "center",
+        "align-items": "center",
+        "min-height": "100vh",
+        "margin": "0",
+        "background-image": "linear-gradient(135deg, #fef9d7 10%, #78c3e0 100%)"
+      },
+      "container": {
+        "display": "flex",
+        "justify-content": "center",
+        "align-items": "center",
+        "max-width": "500px",
+        "width": "100%",
+        "border-radius": "10px",
+        "overflow": "hidden",
+        "border": "1px solid #ddd"
+      },
+      "form-container": {
+        "padding": "40px",
+        "width": "100%",
+        "display": "flex",
+        "flex-direction": "column",
+        "justify-content": "center",
+        "box-sizing": "border-box",
+        "background-image": "linear-gradient(135deg, #d1884d 10%, #fbed96 100%)"
+      },
+      "form-container h2": {
+        "margin-bottom": "20px",
+        "font-size": "24px",
+        "color": "#333",
+        "text-align": "center"
+      },
+      "form-container label": {
+        "margin-bottom": "5px",
+        "color": "#555"
+      },
+      "form-container input": {
+        "padding": "10px",
+        "margin-bottom": "15px",
+        "border": "1px solid #ccc",
+        "border-radius": "5px",
+        "font-size": "16px",
+        "width": "100%"
+      },
+      "form-container input[type='checkbox']": {
+        "width": "auto",
+        "margin-right": "10px"
+      },
+      "form-container button": {
+        "padding": "12px 20px",
+        "background-color": "#2864d3",
+        "color": "white",
+        "border": "none",
+        "border-radius": "5px",
+        "font-size": "18px",
+        "cursor": "pointer",
+        "margin": "20px auto 10px auto",
+        "display": "block",
+        "transition": "background-color 0.3s ease"
+      },
+      "form-container button:hover": {
+        "background-color": "#4c81ff"
+      },
+      "form-container .login-link": {
+        "margin-top": "15px",
+        "text-align": "center"
+      },
+      "form-container .login-link a": {
+        "color": "#4c81ff",
+        "text-decoration": "none",
+        "font-size": "16px"
+      },
+      "form-container .login-link a:hover": {
+        "text-decoration": "underline"
+      },
+      "error": {
+        "color": "red",
+        "font-size": "14px"
+      },
+      "form-container a": {
+        "color": "#4c81ff",
+        "text-decoration": "none",
+        "font-weight": "bold"
+      },
+      "form-container a:hover": {
+        "text-decoration": "underline"
+      }
+    }
+  }
+  
+      <style>
+        {% for selector, style in signup_template.styles.items() %}
+            {{ selector }} {
+                {% for property, value in style.items() %}
+                    {{ property }}: {{ value }};
+                {% endfor %}
+            }
+        {% endfor %}
+    </style>     
+
+
+
+    {
+    "template_name": "account",
+    "head": {
+      "meta_charset": "UTF-8",
+      "meta_viewport": "width=device-width, initial-scale=1.0",
+      "title": "Account",
+      "google_font": "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
+      "bootstrap_css": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+      "custom_css": "css/Account.css",
+      "fontawesome_cdn": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    },
+    "sidebar": {
+      "logo": {
+        "src": "Images/Exafluence.jpg",
+        "text": "Exafluence"
+      },
+      "links": [
+        { "href": "/dashboard", "class": "active", "icon": "fas fa-tachometer-alt", "text": "Dashboard" },
+        { "href": "/account", "class": "active", "icon": "fas fa-user", "text": "My Account" },
+        { "href": "/myshipment", "class": "active", "icon": "fas fa-box", "text": "My Shipment" },
+        { "href": "/newshipment", "class": "active", "icon": "fas fa-plus", "text": "New Shipment" },
+        { "href": "/login", "class": "logout", "icon": "fas fa-sign-out-alt", "text": "Logout", "onclick": "logout(event)" }
+      ]
+    },
+    "content": {
+      "icon": "fas fa-user",
+      "title": "Account Information",
+      "fields": [
+        { "label": "Username", "id": "username", "type": "text", "readonly": true },
+        { "label": "Email", "id": "email", "type": "email", "readonly": true },
+        { "label": "Role", "id": "role", "type": "text", "readonly": true }
+      ],
+      "buttons": [
+        { "class": "action-button", "type": "button", "onclick": "logout(event)", "text": "Logout" }
+      ]
+    },
+    "script": "js/Account.js"
+  }
+  
+
+  {
+  "template_name": "account",
+  "head": {
+    "meta_charset": "UTF-8",
+    "meta_viewport": "width=device-width, initial-scale=1.0",
+    "title": "Account",
+    "google_font": "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
+    "bootstrap_css": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css",
+    "custom_css": "css/Account.css",
+    "fontawesome_cdn": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  },
+  "sidebar": {
+    "logo": {
+      "src": "Images/Exafluence.jpg",
+      "text": "Exafluence"
+    },
+    "links": [
+      { "href": "/dashboard", "class": "active", "icon": "fas fa-tachometer-alt", "text": "Dashboard" },
+      { "href": "/account", "class": "active", "icon": "fas fa-user", "text": "My Account" },
+      { "href": "/myshipment", "class": "active", "icon": "fas fa-box", "text": "My Shipment" },
+      { "href": "/newshipment", "class": "active", "icon": "fas fa-plus", "text": "New Shipment" },
+      { "href": "/login", "class": "logout", "icon": "fas fa-sign-out-alt", "text": "Logout", "onclick": "logout(event)" }
+    ]
+  },
+  "content": {
+    "icon": "fas fa-user",
+    "title": "Account Information",
+    "fields": [
+      { "label": "Username", "id": "username", "type": "text", "readonly": true },
+      { "label": "Email", "id": "email", "type": "email", "readonly": true },
+      { "label": "Role", "id": "role", "type": "text", "readonly": true }
+    ],
+    "buttons": [
+      { "class": "action-button", "type": "button", "onclick": "logout(event)", "text": "Logout" }
+    ]
+  },
+  "script": "js/Account.js",
+  "styles": {
+    "body": {
+      "min-height": "100vh",
+      "background-color": "#dfe0e4",
+      "display": "flex",
+      "flex-direction": "column",
+      "position": "relative",
+      "overflow": "hidden"
+    },
+    ".sidebar": {
+      "position": "fixed",
+      "top": "0",
+      "left": "0",
+      "height": "100%",
+      "width": "85px",
+      "display": "flex",
+      "overflow-x": "hidden",
+      "flex-direction": "column",
+      "background": "#40566d",
+      "padding": "25px 20px",
+      "transition": "all 0.4s ease"
+    },
+    ".sidebar:hover": {
+      "width": "260px"
+    },
+    ".sidebar .sidebar-header": {
+      "display": "flex",
+      "align-items": "center"
+    },
+    ".sidebar .sidebar-header img": {
+      "width": "42px",
+      "border-radius": "50%"
+    },
+    ".sidebar .sidebar-header h2": {
+      "color": "white",
+      "font-size": "1.25rem",
+      "font-weight": "600",
+      "white-space": "nowrap",
+      "margin-left": "23px",
+      "opacity": "0",
+      "transition": "opacity 0.3s"
+    },
+    ".sidebar:hover .sidebar-header h2": {
+      "opacity": "1"
+    },
+    ".sidebar-links": {
+      "list-style": "none",
+      "margin-top": "20px",
+      "height": "80%",
+      "overflow-y": "auto",
+      "scrollbar-width": "none"
+    },
+    ".sidebar-links::-webkit-scrollbar": {
+      "display": "none"
+    },
+    ".sidebar-links li a": {
+      "display": "flex",
+      "align-items": "center",
+      "gap": "0 20px",
+      "color": "white",
+      "font-weight": "500",
+      "white-space": "nowrap",
+      "padding": "15px 10px",
+      "text-decoration": "none",
+      "transition": "0.2s ease"
+    },
+    ".sidebar-links li a .text": {
+      "opacity": "0",
+      "transition": "opacity 0.3s"
+    },
+    ".sidebar:hover .sidebar-links li a .text": {
+      "opacity": "1"
+    },
+    ".sidebar-links li a:hover": {
+      "color": "#161a2d",
+      "background": "#fff",
+      "border-radius": "4px"
+    },
+    ".sidebar-links li a.active": {
+      "background-color": "#fff"!important,
+      "color": "#161a2d",
+      "border-radius": "4px"
+    },
+    ".content": {
+      "margin-left": "100px",
+      "padding": "20px",
+      "flex-grow": "1",
+      "transition": "margin-left 0.4s",
+      "position": "relative",
+      "height": "100vh",
+      "display": "flex",
+      "flex-direction": "column",
+      "align-items": "center",
+      "justify-content": "center"
+    },
+    ".sidebar:hover + .content": {
+      "margin-left": "260px"
+    },
+    ".account-card": {
+      "color": "white",
+      "padding": "40px",
+      "border-radius": "12px",
+      "width": "auto",
+      "max-width": "90%",
+      "margin-top": "30px",
+      "display": "flex",
+      "flex-direction": "column",
+      "align-items": "center",
+      "text-align": "center",
+      "transition": "transform 0.3s ease, box-shadow 0.3s ease"
+    },
+    ".account-card:hover": {
+      "transform": "translateY(-5px)",
+      "box-shadow": "0 8px 20px rgba(0, 0, 0, 0.3)"
+    },
+    ".account-container:hover": {
+      "transform": "translateY(-5px)",
+      "box-shadow": "0 8px 20px rgba(0, 0, 0, 0.3)"
+    },
+    ".account-info": {
+      "display": "flex",
+      "align-items": "center",
+      "justify-content": "center",
+      "margin-bottom": "20px",
+      "flex-direction": "column"
+    },
+    ".account-info .account-icon": {
+      "width": "70px",
+      "height": "70px",
+      "background-color": "#4f52ba",
+      "border-radius": "50%",
+      "display": "flex",
+      "align-items": "center",
+      "justify-content": "center",
+      "margin-bottom": "15px"
+    },
+    ".account-info .account-icon i": {
+      "font-size": "28px",
+      "color": "white"
+    },
+    ".account-info .text": {
+      "font-size": "1.8rem",
+      "font-weight": "700"
+    },
+    ".input-container": {
+      "width": "100%",
+      "display": "flex",
+      "flex-direction": "column",
+      "align-items": "center"
+    },
+    ".input-container label": {
+      "font-size": "1rem",
+      "color": "white",
+      "font-weight": "500",
+      "margin-bottom": "5px",
+      "width": "120%",
+      "text-align": "left"
+    },
+    ".input-container input": {
+      "font-size": "1rem",
+      "padding": "12px 15px",
+      "width": "120%",
+      "margin-bottom": "15px",
+      "border": "none",
+      "border-radius": "6px",
+      "background-color": "rgba(255, 255, 255, 0.9)",
+      "color": "#333",
+      "box-shadow": "inset 0 2px 5px rgba(0, 0, 0, 0.1)",
+      "transition": "0.3s"
+    },
+    ".input-container input:focus": {
+      "outline": "none",
+      "background-color": "white",
+      "box-shadow": "0 0 8px rgba(255, 255, 255, 0.6)"
+    },
+    ".button-container": {
+      "margin-top": "20px",
+      "display": "flex",
+      "gap": "15px",
+      "width": "100%",
+      "justify-content": "center"
+    },
+    ".action-button": {
+      "background": "linear-gradient(135deg, #1d30b1, #3c50d0)",
+      "color": "white",
+      "padding": "12px 20px",
+      "border": "none",
+      "cursor": "pointer",
+      "border-radius": "8px",
+      "font-size": "16px",
+      "font-weight": "600",
+      "width": "45%",
+      "transition": "0.3s ease"
+    },
+    ".action-button:hover": {
+      "background": "linear-gradient(135deg, #b45218, #e3723a)",
+      "transform": "scale(1.05)"
+    }
+  }
+}
+
+
+{
+  "section": "dashboard_page",
+  "head": {
+    "meta_charset": "UTF-8",
+    "meta_viewport": "width=device-width, initial-scale=1.0",
+    "title": "Dashboard",
+    "css_links": [
+      "css/Dashboard.css",
+      "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    ]
+  },
+  "sidebar": {
+    "logo_image": "Images/Exafluence.jpg",
+    "logo_text": "Exafluence",
+    "menu_title": "Main Menu",
+    "menu_items": [
+      {
+        "name": "Dashboard",
+        "class": "active",
+        "href": "/dashboard",
+        "icon": "fas fa-tachometer-alt"
+      },
+      {
+        "name": "My Account",
+        "href": "/account",
+        "icon": "fas fa-user"
+      },
+      {
+        "name": "My Shipment",
+        "href": "/myshipment",
+        "icon": "fas fa-box"
+      },
+      {
+        "name": "New Shipment",
+        "href": "/newshipment",
+        "icon": "fas fa-plus"
+      },
+      {
+        "name": "Logout",
+        "href": "/login",
+        "icon": "fas fa-sign-out-alt",
+        "class": "logout",
+        "onclick": "logout(event)"
+      }
+    ]
+  }
+}
+
+
+[project]
+name = "scmxpert"
+version = "0.1.0"
+description = "SCMXpert Implementation Using CWAN"
+authors = [
+    {name = "Your Name",email = "you@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pymongo (>=4.11.3,<5.0.0)",
+    "python-dotenv (>=1.1.0,<2.0.0)",
+    "pydantic (>=2.11.2,<3.0.0)",
+    "passlib[bcrpt] (>=1.7.4,<2.0.0)",
+    "flask (>=3.1.0,<4.0.0)",
+    "python-jose (>=3.4.0,<4.0.0)",
+    "datetime (>=5.5,<6.0)",
+    "bcrypt (>=4.3.0,<5.0.0)",
+    "dotenv (>=0.9.9,<0.10.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

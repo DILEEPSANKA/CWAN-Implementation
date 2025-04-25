@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="{{ home_template.head.meta_charset }}">
+    <meta name="viewport" content="{{ home_template.head.meta_viewport }}">
+    <link href="{{ home_template.head.google_font }}" rel="stylesheet">
+    <link href="{{ home_template.head.bootstrap_css }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('scmProject.static', filename=home_template.head.custom_css) }}">
+    <style>
+        {% for selector, style in home_template.styles.items() %}
+            {{ selector }} {
+                {% for property, value in style.items() %}
+                    {{ property | safe }}: {{ value | safe }};
+                {% endfor %}
+            }
+        {% endfor %}
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav">
+        <div class="logo">
+            <img src="{{ url_for('scmProject.static', filename=home_template.nav.logo_image) }}" alt="Company Logo"> 
+            <span>{{ home_template.nav.logo_text }}</span>
+        </div>
+        <div class="nav-links">
+            {% for link in home_template.nav.nav_links %}
+                {% if link.modal %}
+                    <a href="{{ link.href }}" data-bs-toggle="modal" data-bs-target="#{{ link.modal }}">{{ link.name }}</a>
+                {% else %}
+                    <a href="{{ link.href }}">{{ link.name }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </nav>
+    
+    <div class="main-content"> </div>
+
+    <div class="modal fade" id="{{ home_template.about_modal.id }}" tabindex="-1" aria-labelledby="{{ home_template.about_modal.id }}Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content about-card">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="{{ home_template.about_modal.id }}Label">{{ home_template.about_modal.title }}</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>{{ home_template.about_modal.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="modal fade" id="{{ home_template.contact_modal.id }}" tabindex="-1" aria-labelledby="{{ home_template.contact_modal.id }}Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content contact-card">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="{{ home_template.contact_modal.id }}Label">{{ home_template.contact_modal.title }}</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>{{ home_template.contact_modal.description }}</p>
+                    <p>Email: <a href="mailto:{{ home_template.contact_modal.email }}">{{ home_template.contact_modal.email }}</a></p>
+                    <p>Phone: {{ home_template.contact_modal.phone }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

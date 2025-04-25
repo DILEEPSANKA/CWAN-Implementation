@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #95bad3;
+    display: flex;
+    font-size: 16px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 85px; 
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+    background: #40566d;
+    padding: 25px 20px;
+    transition: all 0.4s ease;
+}
+
+.sidebar:hover {
+    width: 260px;
+}
+
+.sidebar .sidebar-header {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .sidebar-header img {
+    width: 42px;
+    border-radius: 50%;
+}
+
+.sidebar .sidebar-header h2 {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-left: 23px;
+    opacity: 0; 
+    transition: opacity 0.3s; 
+}
+
+.sidebar:hover .sidebar-header h2 {
+    opacity: 1;
+}
+
+.sidebar-links h4 {
+    color: #fff;
+    font-weight: 500;
+    white-space: nowrap;
+    margin: 10px 0;
+    position: relative;
+}
+
+.sidebar-links h4 span {
+    opacity: 0;
+}
+
+.sidebar:hover .sidebar-links h4 span {
+    opacity: 1;
+}
+
+.sidebar-links .menu-separator {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(1);
+    transform: translateY(-50%);
+    background: #4f52ba;
+    transform-origin: right;
+    transition-delay: 0.2s;
+}
+
+.sidebar:hover .sidebar-links .menu-separator {
+    transition-delay: 0s;
+    transform: scaleX(0);
+}
+
+.sidebar-links {
+    list-style: none;
+    margin-top: 20px;
+    height: 80%;
+    overflow-y: auto;
+    scrollbar-width: none; 
+}
+
+.sidebar-links::-webkit-scrollbar {
+    display: none; 
+}
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+    color: #fff;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 15px 10px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.sidebar-links li a .text {
+    opacity: 0; 
+    transition: opacity 0.3s; 
+}
+
+.sidebar:hover .sidebar-links li a .text {
+    opacity: 1; 
+}
+
+.sidebar-links li a:hover {
+    color: #161a2d;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.sidebar-links li a.active {
+    background-color: #fff; 
+    color: #161a2d; 
+    border-radius: 4px; 
+}
+
+.content {
+    margin-left: 100px; 
+    padding: 20px;
+    flex-grow: 1;
+    transition: margin-left 0.4s; 
+}
+
+.sidebar:hover + .content {
+    margin-left: 260px; 
+}
+
+.content h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.form-grid {
+    display: grid;
+    justify-content: center; 
+    align-items: center; 
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: auto; 
+    max-width: 100%; 
+    padding-left: 10%;
+}
+
+.form-outline {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.input-field {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 75%;
+    box-sizing: border-box;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 40px;
+}
+
+
+
+.button-container {
+    grid-column: span 2; 
+    display: flex;
+    justify-content: flex-end; 
+    gap: 100px; 
+    margin-top: 60px;
+    margin-right: 190px;
+}
+
+.button-80 {
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4f52ba;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-80:hover {
+    background-color: #3d47a4;
+}
+
+
+.button-80:hover {
+    background-color: #3d47a4;
+}
+
+
+h3 {
+    text-align: left;
+    margin-left: 170px; 
+    color: #4f52ba;
+    font-weight: 600;
+}
+
+h3 a {
+    text-decoration: none; 
+}
+
+h3 a:hover {
+    text-decoration: underline; 
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+#response-message {
+    position: absolute;
+    top: 20px;
+    left: 80%;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 10;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+#response-message.green {
+    color: green;
+    background-color: #121312;
+}
+
+#response-message.red {
+    color: red;
+    background-color: #111010;
+}
